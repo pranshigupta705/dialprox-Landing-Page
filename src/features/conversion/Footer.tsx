@@ -1,4 +1,6 @@
-﻿const columns = [
+﻿import Logo from "@/components/Logo";
+
+const columns = [
   {
     title: 'Product',
     links: [
@@ -27,11 +29,12 @@ export default function Footer() {
       <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-12 md:px-6 lg:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
         <div className="grid max-w-sm content-start gap-3">
           <a
-            href="#top"
-            className="text-xl font-bold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-primary)]"
-          >
-            DialProx
-          </a>
+  href="#top"
+  aria-label="DialProX home"
+  className="inline-block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-primary)]"
+>
+  <Logo className="text-3xl" />
+</a>
           <p className="text-[var(--color-text-muted)]">
             Answer every call, route it right, and keep improving with the data.
           </p>

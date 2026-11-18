@@ -12,6 +12,7 @@ import {
   SectionHeading,
 } from '@/components/ui';
 import { Sun, Moon, Phone, ArrowRight, Bell } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 // Helper component for color swatches
 function ColorSwatch({ name, variable }: { name: string; variable: string }) {
@@ -36,7 +37,7 @@ export default function DesignSystem() {
       <header className="sticky top-0 z-10 bg-[var(--color-surface)] border-b border-[var(--color-border)] shadow-[var(--shadow-sm)]">
         <Container className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <span className="font-bold text-[var(--color-primary)] text-lg">DialProx</span>
+            <Logo className="text-xl" />
             <Badge variant="primary">Design System</Badge>
           </div>
           <IconButton

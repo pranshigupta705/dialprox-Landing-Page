@@ -1,7 +1,9 @@
 ﻿import { useEffect, useRef, useState } from 'react';
-import { Menu, Moon, Sun, X, Phone } from 'lucide-react';
+import { Menu, Moon, Sun, X  } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { toggleMenu, closeMenu, setTheme } from '@/store/slices/uiSlice';
+import Logo from '../Logo';
+
 
 const links = [
   { label: 'Features', href: '#calling' },
@@ -80,12 +82,9 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between gap-4 px-4 md:px-6 lg:px-8">
-        <a href="/" aria-label="DialProx home" className="flex items-center gap-2 text-xl font-bold">
-          <span className="grid h-8 w-8 place-items-center rounded-[10px] bg-[var(--color-primary)] text-white">
-            <Phone size={18} aria-hidden="true" />
-          </span>
-          DialProx
-        </a>
+        <a href="/" aria-label="DialProX home" className="flex items-center">
+        <Logo className="text-3xl" />
+    </a>
 
         <nav aria-label="Main" className="hidden items-center gap-4 lg:flex">
           {links.map((l) => (

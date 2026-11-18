@@ -240,3 +240,27 @@
   .reveal-visible ol > li { animation: none; }
 }
 
+
+/* ── DialProX wordmark ── */
+.logo-wordmark {
+  font-family: 'Poppins', var(--font-sans);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  white-space: nowrap;
+  color: #1b2a6b;
+}
+
+.dark .logo-wordmark {
+  color: #ffffff;
+}
+
+.logo-x {
+  display: inline-block;
+  padding-right: 0.06em;
+  background: linear-gradient(135deg, #f7a21b, #f04e23);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

@@ -3,7 +3,7 @@ import { callingFeatures } from './data';
 
 export default function CallingFeatures() {
   return (
-    <section id="calling" className="bg-background-alt py-16 lg:py-28">
+    <section id="calling" className="scroll-mt-20 bg-background-alt py-16 lg:py-28">
       <div className="mx-auto max-w-[1200px] px-4 md:px-6 lg:px-8">
         <div className="mx-auto mb-12 grid max-w-2xl justify-items-center gap-3 text-center">
           <span className="inline-block rounded-full bg-[var(--color-primary-soft)] px-3 py-1 text-sm font-semibold text-[var(--color-primary)]">
@@ -45,3 +45,4 @@ export default function CallingFeatures() {
     </section>
   );
 }
+

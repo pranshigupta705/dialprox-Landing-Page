@@ -1,10 +1,11 @@
 ﻿import Hero from '@/features/hero/Hero';
 import CallingFeatures from '@/features/calling/CallingFeatures';
+import Workflow from '@/features/product/Workflow';
+import Analytics from '@/features/product/Analytics';
+import Integrations from '@/features/product/Integrations';
+import Benefits from '@/features/product/Benefits';
 
 const placeholders = [
-  { id: 'workflow', label: 'Workflow: Phase 5' },
-  { id: 'analytics', label: 'Analytics: Phase 5' },
-  { id: 'integrations', label: 'Integrations: Phase 5' },
   { id: 'faq', label: 'FAQ: Phase 6' },
   { id: 'contact', label: 'Contact: Phase 6' },
 ];
@@ -14,7 +15,11 @@ export default function HomePage() {
     <>
       <Hero />
       <CallingFeatures />
-      {/* TODO: replace these placeholders in Phases 5-6 */}
+      <Workflow />
+      <Analytics />
+      <Integrations />
+      <Benefits />
+      {/* TODO: replace these placeholders in Phase 6 */}
       {placeholders.map((p) => (
         <section
           key={p.id}

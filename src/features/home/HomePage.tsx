@@ -1,4 +1,5 @@
-﻿import { Hero } from '@/features/hero';
+﻿import Reveal from '@/components/Reveal';
+import { Hero } from '@/features/hero';
 import { CallingFeatures } from '@/features/calling';
 import { Workflow, Analytics, Integrations, Benefits } from '@/features/product';
 import { Testimonials, Faq, DemoForm, Footer } from '@/features/conversion';
@@ -8,14 +9,30 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <CallingFeatures />
-      <Workflow />
-      <Analytics />
-      <Integrations />
-      <Benefits />
-      <Testimonials />
-      <Faq />
-      <DemoForm />
+      <Reveal>
+        <CallingFeatures />
+      </Reveal>
+      <Reveal>
+        <Workflow />
+      </Reveal>
+      <Reveal>
+        <Analytics />
+      </Reveal>
+      <Reveal>
+        <Integrations />
+      </Reveal>
+      <Reveal>
+        <Benefits />
+      </Reveal>
+      <Reveal>
+        <Testimonials />
+      </Reveal>
+      <Reveal>
+        <Faq />
+      </Reveal>
+      <Reveal>
+        <DemoForm />
+      </Reveal>
       <Footer />
     </>
   );

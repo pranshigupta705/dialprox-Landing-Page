@@ -47,7 +47,7 @@ function Field({ name, label, optional, error, children }: FieldProps) {
         'aria-describedby': error ? errorId : undefined,
       })}
       {error && (
-        <p id={errorId} className="text-sm text-[var(--color-danger,#dc2626)]">
+        <p id={errorId} className="text-sm text-[var(--color-danger)]">
           {error}
         </p>
       )}
@@ -68,7 +68,7 @@ export default function DemoForm() {
   const [status, setStatus] = useState<Status>('idle');
 
   const borderFor = (name: keyof DemoFormValues) =>
-    errors[name] ? 'border-[var(--color-danger,#dc2626)]' : 'border-[var(--color-border)]';
+    errors[name] ? 'border-[var(--color-danger)]' : 'border-[var(--color-border)]';
 
   function handleChange(name: keyof DemoFormValues, value: string) {
     const next = { ...values, [name]: value };
@@ -269,3 +269,4 @@ export default function DemoForm() {
     </section>
   );
 }
+

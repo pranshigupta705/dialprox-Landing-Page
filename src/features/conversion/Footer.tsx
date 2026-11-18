@@ -5,7 +5,7 @@
       { label: 'Calling features', href: '#calling' },
       { label: 'How it works', href: '#workflow' },
       { label: 'Analytics', href: '#analytics' },
-      { label: 'Integrations', href: '#integrations' },
+      { label: 'Customization', href: '#customization' },
     ],
   },
   {
@@ -64,3 +64,4 @@ export default function Footer() {
     </footer>
   );
 }
+

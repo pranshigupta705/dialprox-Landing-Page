@@ -4,20 +4,20 @@
 /* Tailwind CSS v4 directive: registers these tokens for generated utilities. */
 @theme {
   /* ── Colors ── */
-  --color-primary: #4F46E5;
-  --color-primary-hover: #4338CA;
-  --color-primary-soft: #EEF2FF;
-  --color-accent: #10B981;
-  --color-background: #FFFFFF;
-  --color-background-alt: #F8FAFC;
-  --color-surface: #FFFFFF;
-  --color-border: #E2E8F0;
-  --color-text: #0F172A;
-  --color-text-muted: #475569;
-  --color-dark-section: #0B1020;
-  --color-danger: #EF4444;
-  --color-warning: #F59E0B;
-  --color-success: #10B981;
+  --color-primary: #1890ff;
+  --color-primary-hover: #1e5bd8;
+  --color-primary-soft: #e6f4ff;
+  --color-accent: #f58220;
+  --color-background: #ffffff;
+  --color-background-alt: #fafafa;
+  --color-surface: #ffffff;
+  --color-border: #f0f0f0;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-dark-section: #1b2a6b;
+  --color-danger: #e4262c;
+  --color-warning: #f58220;
+  --color-success: #1890ff;
 
   /* ── Typography ── */
   --font-sans: "InterVariable", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -41,8 +41,8 @@
   --radius-full: 9999px;
 
   /* ── Shadows ── */
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
-  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.12);
+  --shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.08);
+  --shadow-md: 0 4px 16px rgba(17, 24, 39, 0.12);
 
   /* ── Breakpoints (Tailwind defaults, kept explicit) ── */
   --breakpoint-sm: 640px;
@@ -54,13 +54,13 @@
 /* ── Dark theme variable overrides ── */
 .dark {
   color-scheme: dark;
-  --color-background: #0B1020;
-  --color-background-alt: #111827;
-  --color-surface: #1E2535;
-  --color-border: #334155;
-  --color-text: #F1F5F9;
-  --color-text-muted: #94A3B8;
-  --color-primary-soft: #1E1B4B;
+  --color-background: #111827;
+  --color-background-alt: #1b2a6b;
+  --color-surface: #111827;
+  --color-border: #374151;
+  --color-text: #ffffff;
+  --color-text-muted: #8c8c8c;
+  --color-primary-soft: #1b2a6b;
 }
 
 /* ── Base styles (in @layer base so Tailwind utilities can override them) ── */
@@ -239,3 +239,4 @@
   .reveal-visible details,
   .reveal-visible ol > li { animation: none; }
 }
+

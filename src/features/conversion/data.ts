@@ -68,7 +68,7 @@ export const faqs: FaqItem[] = [
     id: 'integrations',
     question: 'Which tools does it connect to?',
     answer:
-      'DialProx syncs with common CRMs, helpdesks, calendars, and payment tools. See the integrations section for the current list.',
+      'DialProx can be customized to connect with the tools your team already uses. Tell us what you need during your demo.',
   },
   {
     id: 'security',
@@ -79,3 +79,4 @@ export const faqs: FaqItem[] = [
 ];
 
 export const teamSizes: string[] = ['1–10', '11–50', '51–200', '201–1,000', '1,000+'];
+

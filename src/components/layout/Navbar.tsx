@@ -7,7 +7,7 @@ const links = [
   { label: 'Features', href: '#calling' },
   { label: 'How it works', href: '#workflow' },
   { label: 'Analytics', href: '#analytics' },
-  { label: 'Integrations', href: '#integrations' },
+  { label: 'Customization', href: '#customization' },
   { label: 'FAQ', href: '#faq' },
 ] as const;
 
@@ -158,3 +158,4 @@ export default function Navbar() {
     </header>
   );
 }
+

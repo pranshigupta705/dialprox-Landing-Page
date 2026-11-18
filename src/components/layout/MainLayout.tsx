@@ -1,9 +1,10 @@
-import { Outlet } from 'react-router-dom';
+﻿import { Outlet } from 'react-router-dom';
 import { useTheme } from '@/hooks/useTheme';
 import Navbar from './Navbar';
+import ScrollToHash from './ScrollToHash';
 
 export default function MainLayout() {
-  useTheme(); 
+  useTheme(); // applies the dark class to <html>
   return (
     <div id="top" className="min-h-screen bg-background text-[var(--color-text)]">
       <a
@@ -13,6 +14,7 @@ export default function MainLayout() {
         Skip to main content
       </a>
       <Navbar />
+      <ScrollToHash />
       <main id="main">
         <Outlet />
       </main>

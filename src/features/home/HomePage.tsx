@@ -1,14 +1,9 @@
-﻿import Hero from '@/features/hero/Hero';
-import CallingFeatures from '@/features/calling/CallingFeatures';
-import Workflow from '@/features/product/Workflow';
-import Analytics from '@/features/product/Analytics';
-import Integrations from '@/features/product/Integrations';
-import Benefits from '@/features/product/Benefits';
-import Testimonials from '@/features/conversion/Testimonials';
-import Faq from '@/features/conversion/Faq';
-import DemoForm from '@/features/conversion/DemoForm';
-import Footer from '@/features/conversion/Footer';
+﻿import { Hero } from '@/features/hero';
+import { CallingFeatures } from '@/features/calling';
+import { Workflow, Analytics, Integrations, Benefits } from '@/features/product';
+import { Testimonials, Faq, DemoForm, Footer } from '@/features/conversion';
 
+// Page order = order below. This renders inside <main> from MainLayout.
 export default function HomePage() {
   return (
     <>

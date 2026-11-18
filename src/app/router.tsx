@@ -1,20 +1,23 @@
-﻿import { createBrowserRouter } from 'react-router-dom';
+/* eslint-disable react-refresh/only-export-components */
+import { createBrowserRouter } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import MainLayout from '@/components/layout/MainLayout';
+import HomePage from '../features/home/HomePage';
 
 const DesignSystem = lazy(() => import('@/pages/DesignSystem'));
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <div className="p-8 text-[var(--color-text)]">DialProx — Phase 3 coming soon</div>,
+    element: <MainLayout />,
+    children: [{ index: true, element: <HomePage /> }],
   },
   {
-    // TODO: Remove or gate this route in production (Phase 7)
     path: '/design-system',
     element: (
       <Suspense
         fallback={
-          <div className="flex items-center justify-center min-h-screen text-[var(--color-text-muted)]">
+          <div className="flex min-h-screen items-center justify-center text-[var(--color-text-muted)]">
             Loading…
           </div>
         }

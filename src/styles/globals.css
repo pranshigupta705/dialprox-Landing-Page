@@ -62,66 +62,67 @@
   --color-primary-soft: #1E1B4B;
 }
 
-/* ── Base styles ── */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+/* ── Base styles (in @layer base so Tailwind utilities can override them) ── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-}
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  }
 
-/* ── Focus visible ring ── */
-:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 
-/* ── Typography base ── */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--color-text);
-  margin: 0;
-}
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text);
+    margin: 0;
+  }
 
-h1 {
-  font-size: clamp(2.25rem, 5vw, 3.75rem);
-  font-weight: 700;
-  line-height: 1.1;
-}
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
 
-h2 {
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-}
+  h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
 
-h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
 
-h4 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
+  h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
 
-p {
-  margin: 0;
-  max-width: 65ch;
+  p {
+    margin: 0;
+    max-width: 65ch;
+  }
 }
 
 /* ── Reduced motion ── */
@@ -155,6 +156,16 @@ p {
   to { transform: rotate(360deg); }
 }
 
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes wave {
+  0%, 100% { height: 6px; }
+  50% { height: 28px; }
+}
+
 /* ── Utility classes ── */
 .pulse-ring {
   animation: pulse-ring 1.5s ease-out infinite;
@@ -162,4 +173,13 @@ p {
 
 .spin {
   animation: spin 0.75s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+.wave-bar {
+  height: 6px;
+  animation: wave 1.1s ease-in-out infinite;
 }

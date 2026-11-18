@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { forwardRef } from 'react';
 import { cva } from 'class-variance-authority';
 import type { VariantProps } from 'class-variance-authority';

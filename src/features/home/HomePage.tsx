@@ -1,7 +1,7 @@
-import Hero from '@/features/hero/Hero';
+﻿import Hero from '@/features/hero/Hero';
+import CallingFeatures from '@/features/calling/CallingFeatures';
 
 const placeholders = [
-  { id: 'calling', label: 'Calling features: Phase 4' },
   { id: 'workflow', label: 'Workflow: Phase 5' },
   { id: 'analytics', label: 'Analytics: Phase 5' },
   { id: 'integrations', label: 'Integrations: Phase 5' },
@@ -13,7 +13,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      {/* TODO: replace these placeholders in Phases 4-6 */}
+      <CallingFeatures />
+      {/* TODO: replace these placeholders in Phases 5-6 */}
       {placeholders.map((p) => (
         <section
           key={p.id}

@@ -4,11 +4,10 @@ import Workflow from '@/features/product/Workflow';
 import Analytics from '@/features/product/Analytics';
 import Integrations from '@/features/product/Integrations';
 import Benefits from '@/features/product/Benefits';
-
-const placeholders = [
-  { id: 'faq', label: 'FAQ: Phase 6' },
-  { id: 'contact', label: 'Contact: Phase 6' },
-];
+import Testimonials from '@/features/conversion/Testimonials';
+import Faq from '@/features/conversion/Faq';
+import DemoForm from '@/features/conversion/DemoForm';
+import Footer from '@/features/conversion/Footer';
 
 export default function HomePage() {
   return (
@@ -19,16 +18,10 @@ export default function HomePage() {
       <Analytics />
       <Integrations />
       <Benefits />
-      {/* TODO: replace these placeholders in Phase 6 */}
-      {placeholders.map((p) => (
-        <section
-          key={p.id}
-          id={p.id}
-          className="grid min-h-[60vh] scroll-mt-20 place-items-center border-t border-[var(--color-border)] text-[var(--color-text-muted)]"
-        >
-          {p.label}
-        </section>
-      ))}
+      <Testimonials />
+      <Faq />
+      <DemoForm />
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useRef, useState } from 'react';
 import { Menu, Moon, Sun, X, Phone } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { toggleMenu, closeMenu, setTheme } from '@/store/slices/uiSlice';
@@ -89,7 +89,7 @@ export default function Navbar() {
 
         <nav aria-label="Main" className="hidden items-center gap-4 lg:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className={linkCls(l.href)}>
+            <a key={l.href} href={l.href} aria-current={active === l.href.slice(1) ? 'location' : undefined} className={linkCls(l.href)}>
               {l.label}
             </a>
           ))}

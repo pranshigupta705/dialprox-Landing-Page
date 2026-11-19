@@ -264,3 +264,64 @@
   background-clip: text;
   color: transparent;
 }
+
+/* ── Agent scene animation (palette tokens only) ── */
+.scn-in { animation: scn-in 0.8s ease-out both; }
+@keyframes scn-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+.scn-float { animation: scn-float 5s ease-in-out infinite; }
+@keyframes scn-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+.scn-dot { animation: scn-dot 1.2s ease-in-out infinite; }
+@keyframes scn-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+
+.scn-orbit { animation: scn-orbit 3s linear infinite; }
+@keyframes scn-orbit { to { stroke-dashoffset: -20; } }
+
+.scn-min { transform-origin: 330px 70px; animation: scn-spin 6s linear infinite; }
+.scn-hr { transform-origin: 330px 70px; animation: scn-spin 72s linear infinite; }
+@keyframes scn-spin { to { transform: rotate(360deg); } }
+
+.scn-ringwig { transform-origin: 470px 110px; animation: scn-wig 2.4s ease-in-out infinite; }
+@keyframes scn-wig {
+  0%, 50%, 100% { transform: rotate(0); }
+  10% { transform: rotate(-14deg); }
+  20% { transform: rotate(14deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform: rotate(10deg); }
+}
+
+.scn-pulse { transform-origin: 470px 110px; animation: scn-pulse 2.4s ease-out infinite; }
+@keyframes scn-pulse { 0% { transform: scale(1); opacity: 0.7; } 70%, 100% { transform: scale(1.7); opacity: 0; } }
+
+.scn-badge { transform-origin: 490px 90px; animation: scn-badge 2.4s ease-in-out infinite; }
+@keyframes scn-badge { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.25); } 30% { transform: scale(1); } }
+
+.scn-bar { transform-box: fill-box; transform-origin: bottom; animation: scn-bars 6s ease-in-out infinite; }
+@keyframes scn-bars {
+  0% { transform: scaleY(0.1); }
+  20%, 70% { transform: scaleY(1); }
+  100% { transform: scaleY(0.1); }
+}
+
+.scn-donut { animation: scn-draw 6s ease-in-out infinite; }
+@keyframes scn-draw {
+  0% { stroke-dashoffset: 113; }
+  25%, 75% { stroke-dashoffset: 34; }
+  100% { stroke-dashoffset: 113; }
+}
+
+.scn-arm { transform-origin: 190px 195px; animation: scn-arm 0.6s ease-in-out infinite alternate; }
+@keyframes scn-arm { from { transform: rotate(-1.5deg); } to { transform: rotate(2.5deg); } }
+
+.scn-head { transform-origin: 178px 168px; animation: scn-head 5s ease-in-out infinite; }
+@keyframes scn-head { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(2.5deg); } }
+
+.scn-wave { animation: scn-wave 1.6s ease-out infinite; }
+@keyframes scn-wave { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; } }
+
+.scn-sway { transform-box: fill-box; transform-origin: 50% 100%; animation: scn-sway 4s ease-in-out infinite alternate; }
+@keyframes scn-sway { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }

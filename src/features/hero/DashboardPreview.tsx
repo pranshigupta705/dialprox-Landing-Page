@@ -21,7 +21,7 @@ export default function DashboardPreview() {
     >
       <div aria-hidden="true" className="mb-3 flex gap-1.5">
         {[0, 1, 2].map((i) => (
-          <b key={i} className="h-2.5 w-2.5 rounded-full bg-[#8c8c8c]" />
+          <b key={i} className="h-2.5 w-2.5 rounded-full bg-[var(--color-text-muted)]" />
         ))}
       </div>
 
@@ -77,3 +77,4 @@ export default function DashboardPreview() {
     </div>
   );
 }
+

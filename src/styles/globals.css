@@ -325,3 +325,20 @@
 
 .scn-sway { transform-box: fill-box; transform-origin: 50% 100%; animation: scn-sway 4s ease-in-out infinite alternate; }
 @keyframes scn-sway { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
+
+/* ── Scene focus (chips drive the illustration) ── */
+[data-part] {
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+svg[data-focus='calls'] [data-part]:not([data-part='calls']),
+svg[data-focus='followups'] [data-part]:not([data-part='followups']),
+svg[data-focus='reports'] [data-part]:not([data-part='reports']) {
+  opacity: 0.18;
+}
+
+svg[data-focus='calls'] [data-part='calls'],
+svg[data-focus='followups'] [data-part='followups'],
+svg[data-focus='reports'] [data-part='reports'] {
+  filter: drop-shadow(0 0 8px var(--color-primary));
+}

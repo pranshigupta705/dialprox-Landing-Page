@@ -12,10 +12,10 @@
 const PHONE_PATH =
   'M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z';
 
-export default function AgentIllustration() {
+export default function AgentIllustration({ focus }: { focus?: string | null }) {
   return (
 <svg
-          viewBox="0 0 600 380"
+          viewBox="0 0 600 380" data-focus={focus ?? undefined}
           role="img"
           aria-label="An agent with a headset working at a desk, with a monitor showing charts, chat bubbles, a clock and a ringing phone"
           className="scn-in h-auto w-full"
@@ -25,7 +25,7 @@ export default function AgentIllustration() {
           <path d="M168 78 Q300 37 470 96" fill="none" stroke={c.primary} strokeWidth="2" strokeDasharray="4 6" className="scn-orbit" />
 
           {/* typing bubble */}
-          <g className="scn-float">
+          <g data-part="followups" className="scn-float">
             <polygon points="60,158 48,180 84,160" fill={c.surface} stroke={c.primary} strokeOpacity="0.35" strokeWidth="2" />
             <rect x="40" y="105" width="104" height="58" rx="20" fill={c.surface} stroke={c.primary} strokeOpacity="0.35" strokeWidth="2" />
             {[72, 92, 112].map((x, i) => (
@@ -34,7 +34,7 @@ export default function AgentIllustration() {
           </g>
 
           {/* blue chat bubble */}
-          <g className="scn-float" style={{ animationDelay: '-1.5s' }}>
+          <g data-part="followups" className="scn-float" style={{ animationDelay: '-1.5s' }}>
             <polygon points="208,90 226,90 226,106" fill={c.primary} />
             <rect x="168" y="50" width="74" height="42" rx="10" fill={c.primary} />
             <rect x="182" y="63" width="46" height="5" rx="2.5" fill="#fff" />
@@ -42,7 +42,7 @@ export default function AgentIllustration() {
           </g>
 
           {/* clock */}
-          <g className="scn-float" style={{ animationDelay: '-3s' }}>
+          <g data-part="followups" className="scn-float" style={{ animationDelay: '-3s' }}>
             <circle cx="330" cy="70" r="24" fill={c.surface} stroke={c.primary} strokeWidth="3" />
             <line x1="330" y1="70" x2="330" y2="58" stroke={c.dark} strokeWidth="3" strokeLinecap="round" className="scn-hr" />
             <line x1="330" y1="70" x2="330" y2="53" stroke={c.primary} strokeWidth="3" strokeLinecap="round" className="scn-min" />
@@ -50,7 +50,7 @@ export default function AgentIllustration() {
           </g>
 
           {/* ringing phone */}
-          <g className="scn-float" style={{ animationDelay: '-2s' }}>
+          <g data-part="calls" className="scn-float" style={{ animationDelay: '-2s' }}>
             <circle cx="470" cy="110" r="26" fill="none" stroke={c.primary} strokeWidth="2" className="scn-pulse" />
             <circle cx="470" cy="110" r="26" fill={c.surface} stroke={c.primary} strokeWidth="3" />
             <g className="scn-ringwig">
@@ -100,7 +100,7 @@ export default function AgentIllustration() {
           <path d="M140 205 Q142 170 175 168 Q205 170 212 205 L218 252 L142 252 Z" fill={c.primary} />
 
           {/* head and headset */}
-          <g className="scn-head">
+          <g data-part="calls" className="scn-head">
             <circle cx="178" cy="143" r="20" fill={c.accent} fillOpacity="0.35" />
             <path d="M158 140 Q160 118 180 120 Q198 122 198 140 Q188 130 170 134 Z" fill={c.dark} />
             <path d="M160 140 Q158 120 178 118" fill="none" stroke={c.dark} strokeWidth="3" strokeLinecap="round" />
@@ -125,6 +125,7 @@ export default function AgentIllustration() {
           <rect x="215" y="246" width="250" height="10" rx="3" fill={c.dark} />
 
           {/* monitor */}
+          <g data-part="reports">
           <rect x="328" y="236" width="14" height="10" fill={c.dark} />
           <rect x="255" y="140" width="160" height="96" rx="6" fill={c.surface} stroke={c.dark} strokeWidth="6" />
           <rect x="270" y="152" width="40" height="4" rx="2" fill={c.primary} fillOpacity="0.35" />
@@ -151,6 +152,7 @@ export default function AgentIllustration() {
           <rect x="350" y="214" width="42" height="3" rx="1.5" fill={c.muted} fillOpacity="0.5" />
           <rect x="350" y="221" width="28" height="3" rx="1.5" fill={c.muted} fillOpacity="0.5" />
 
+          </g>
           {/* keyboard, arm and hand */}
           <rect x="236" y="240" width="44" height="6" rx="2" fill={c.surface} stroke={c.muted} strokeOpacity="0.6" />
           <g className="scn-arm">
@@ -160,3 +162,4 @@ export default function AgentIllustration() {
         </svg>
   );
 }
+

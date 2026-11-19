@@ -17,7 +17,7 @@ export default function Testimonials() {
         <SectionHeading
           eyebrow="Customers"
           title="Teams that stopped missing calls"
-          description="Here is what customers say after their first weeks with DialProx."
+          description="Here is what customers say after their first weeks with DialProX."
         />
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -50,3 +50,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

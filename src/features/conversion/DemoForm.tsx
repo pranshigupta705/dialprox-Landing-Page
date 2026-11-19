@@ -119,7 +119,7 @@ export default function DemoForm() {
           <SectionHeading
             align="left"
             eyebrow="Book a demo"
-            title="See DialProx handle your calls"
+            title="See DialProX handle your calls"
             description="Tell us a little about your team and we will set up a demo around your use case."
           />
           <div>
@@ -269,4 +269,5 @@ export default function DemoForm() {
     </section>
   );
 }
+
 

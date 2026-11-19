@@ -13,7 +13,7 @@ const columns = [
   {
     title: 'Company',
     links: [
-      { label: 'Why DialProx', href: '#benefits' },
+      { label: 'Why DialProX', href: '#benefits' },
       { label: 'Customers', href: '#testimonials' },
       { label: 'FAQ', href: '#faq' },
       { label: 'Book a demo', href: '#contact' },
@@ -61,10 +61,11 @@ export default function Footer() {
 
       <div className="border-t border-[var(--color-border)]">
         <p className="mx-auto max-w-[1200px] px-4 py-6 text-sm text-[var(--color-text-muted)] md:px-6 lg:px-8">
-          © {year} DialProx. All rights reserved.
+          © {year} DialProX. All rights reserved.
         </p>
       </div>
     </footer>
   );
 }
+
 

@@ -1,4 +1,4 @@
-import { Mic } from 'lucide-react';
+﻿import { Mic } from 'lucide-react';
 import DashboardPreview from './DashboardPreview';
 
 const companies = ['Northwind', 'Lumora', 'Brightpay', 'Kestrel', 'Oakline'];
@@ -16,7 +16,7 @@ export default function Hero() {
               Answer every call. Resolve most of them without a queue.
             </h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)]">
-              DialProx handles inbound and outbound calls with voice agents that know your business, then passes the hard ones to your team with the full conversation attached.
+              DialProX handles inbound and outbound calls with voice agents that know your business, then passes the hard ones to your team with the full conversation attached.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -49,3 +49,4 @@ export default function Hero() {
     </section>
   );
 }
+

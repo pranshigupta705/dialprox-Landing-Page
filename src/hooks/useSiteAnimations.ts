@@ -1,6 +1,6 @@
 ﻿import { useLayoutEffect } from 'react';
 
-const CARD_SELECTOR = 'article, details, form';
+const CARD_SELECTOR = 'article, figure, details, form, #workflow [class*="grid-cols"] > li';
 
 export function useSiteAnimations() {
   useLayoutEffect(() => {
@@ -57,6 +57,10 @@ export function useSiteAnimations() {
           };
           el.addEventListener('animationend', done);
           el.classList.add('rv-in');
+          window.setTimeout(() => {
+            el.classList.remove('rv', 'rv-in');
+            el.style.removeProperty('--rv-d');
+          }, 2200);
         });
       },
       { threshold: 0.12, rootMargin: '0px 0px -6% 0px' },
@@ -99,3 +103,6 @@ export function useSiteAnimations() {
     };
   }, []);
 }
+
+
+

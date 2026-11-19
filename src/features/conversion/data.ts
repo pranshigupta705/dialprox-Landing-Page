@@ -38,7 +38,7 @@ export interface FaqItem {
   answer: string;
 }
 
-// TODO: Review every answer against what DialProx really does before launch.
+// TODO: Review every answer against what DialProX really does before launch.
 export const faqs: FaqItem[] = [
   {
     id: 'setup',
@@ -68,7 +68,7 @@ export const faqs: FaqItem[] = [
     id: 'integrations',
     question: 'Which tools does it connect to?',
     answer:
-      'DialProx can be customized to connect with the tools your team already uses. Tell us what you need during your demo.',
+      'DialProX can be customized to connect with the tools your team already uses. Tell us what you need during your demo.',
   },
   {
     id: 'security',
@@ -79,4 +79,5 @@ export const faqs: FaqItem[] = [
 ];
 
 export const teamSizes: string[] = ['1–10', '11–50', '51–200', '201–1,000', '1,000+'];
+
 

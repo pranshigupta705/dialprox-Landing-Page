@@ -534,3 +534,275 @@ main > section:first-of-type::after {
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
   pointer-events: none;
 }
+
+/* ── Benefits and Testimonials animations (brand palette only) ── */
+#benefits article svg {
+  overflow: visible;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#benefits article:hover svg {
+  transform: scale(1.18) rotate(-6deg);
+}
+
+/* Card 1: the clock hand keeps turning */
+#benefits article:nth-of-type(1) svg > :not(circle) {
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+  animation: bn-tick 6s linear infinite;
+}
+
+@keyframes bn-tick {
+  to { transform: rotate(360deg); }
+}
+
+/* Card 2: the check mark draws itself */
+#benefits article:nth-of-type(2) svg > :last-child {
+  stroke-dasharray: 12;
+  animation: bn-check 4.5s ease-in-out infinite;
+}
+
+@keyframes bn-check {
+  0% { stroke-dashoffset: 12; }
+  30%, 85% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 12; }
+}
+
+/* Card 3: the growth line draws itself */
+#benefits article:nth-of-type(3) svg > * {
+  stroke-dasharray: 30;
+  animation: bn-line 4.5s ease-in-out infinite;
+}
+
+@keyframes bn-line {
+  0% { stroke-dashoffset: 30; }
+  35%, 85% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 30; }
+}
+
+/* Testimonials: a glow ring moves across the cards one at a time */
+#testimonials article {
+  position: relative;
+}
+
+#testimonials article::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-primary) 28%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: tm-spot 9s ease-in-out infinite;
+}
+
+#testimonials article:nth-of-type(2)::after { animation-delay: 3s; }
+#testimonials article:nth-of-type(3)::after { animation-delay: 6s; }
+
+@keyframes tm-spot {
+  0%, 100% { opacity: 0; }
+  6%, 28% { opacity: 1; }
+  34% { opacity: 0; }
+}
+
+/* ── Testimonials: highlight ring for <figure> cards ── */
+#testimonials figure {
+  position: relative;
+}
+
+#testimonials figure::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-primary) 28%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: tm-spot 9s ease-in-out infinite;
+}
+
+#testimonials figure:nth-of-type(2)::after { animation-delay: 3s; }
+#testimonials figure:nth-of-type(3)::after { animation-delay: 6s; }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  #testimonials figure {
+    transition: translate 0.25s ease, box-shadow 0.25s ease;
+  }
+  #testimonials figure:hover {
+    translate: 0 -4px;
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* ── Testimonials highlight: drawn inside the card so it can't be clipped, and bolder ── */
+#testimonials figure {
+  isolation: isolate;
+}
+
+#testimonials figure::after {
+  inset: 0;
+  border-width: 3px;
+  box-shadow: none;
+  background: color-mix(in srgb, var(--color-primary) 7%, transparent);
+  z-index: 1;
+}
+
+/* ── Make the Benefits and Testimonials animations easier to notice ── */
+#benefits article > div:first-child {
+  position: relative;
+  animation: bn-float 3.2s ease-in-out infinite;
+}
+
+#benefits article:nth-of-type(2) > div:first-child { animation-delay: 0.5s; }
+#benefits article:nth-of-type(3) > div:first-child { animation-delay: 1s; }
+
+#benefits article > div:first-child::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--color-primary);
+  pointer-events: none;
+  animation: bn-halo 2.4s ease-out infinite;
+}
+
+#benefits article:nth-of-type(2) > div:first-child::after { animation-delay: 0.5s; }
+#benefits article:nth-of-type(3) > div:first-child::after { animation-delay: 1s; }
+
+@keyframes bn-halo {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+@keyframes bn-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+#testimonials figure {
+  animation: tm-lift 9s ease-in-out infinite;
+}
+
+#testimonials figure:nth-of-type(2) { animation-delay: 3s; }
+#testimonials figure:nth-of-type(3) { animation-delay: 6s; }
+
+@keyframes tm-lift {
+  0%, 100% { translate: 0 0; }
+  6%, 28% { translate: 0 -6px; }
+  34% { translate: 0 0; }
+}
+
+/* ── Fix: scroll reveal must win over the testimonial lift ── */
+#testimonials figure {
+  animation: none;
+}
+
+#testimonials figure.rv-in {
+  animation: rv-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) var(--rv-d, 0ms) both;
+}
+
+/* ── Testimonials spotlight: the active card steps forward, the others dim ── */
+#testimonials figure:not(.rv):not(.rv-in) {
+  animation: tm-focus 9s ease-in-out infinite both;
+}
+
+#testimonials figure:nth-of-type(2):not(.rv):not(.rv-in) { animation-delay: 3s; }
+#testimonials figure:nth-of-type(3):not(.rv):not(.rv-in) { animation-delay: 6s; }
+
+@keyframes tm-focus {
+  0%, 100% { scale: 0.97; opacity: 0.62; }
+  6%, 28% { scale: 1.04; opacity: 1; }
+  34% { scale: 0.97; opacity: 0.62; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #testimonials figure:not(.rv):not(.rv-in) {
+    animation: none;
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* ── Testimonials spotlight: the active card steps forward, the others dim ── */
+#testimonials figure:not(.rv):not(.rv-in) {
+  animation: tm-focus 9s ease-in-out infinite both;
+}
+
+#testimonials figure:nth-of-type(2):not(.rv):not(.rv-in) { animation-delay: 3s; }
+#testimonials figure:nth-of-type(3):not(.rv):not(.rv-in) { animation-delay: 6s; }
+
+@keyframes tm-focus {
+  0%, 100% { scale: 0.97; opacity: 0.62; }
+  6%, 28% { scale: 1.04; opacity: 1; }
+  34% { scale: 0.97; opacity: 0.62; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #testimonials figure:not(.rv):not(.rv-in) {
+    animation: none;
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* ── Spotlight for "Why DialProX" and "How it works" (same as testimonials) ── */
+#benefits [class*="grid-cols"] > *,
+#workflow [class*="grid-cols"] > * {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Blue outline + faint tint on the active card */
+#benefits [class*="grid-cols"] > *::after,
+#workflow [class*="grid-cols"] > *::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  border: 3px solid var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 7%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: tm-spot 9s ease-in-out infinite;
+}
+
+#benefits [class*="grid-cols"] > :nth-child(2)::after,
+#workflow [class*="grid-cols"] > :nth-child(2)::after { animation-delay: 3s; }
+
+#benefits [class*="grid-cols"] > :nth-child(3)::after,
+#workflow [class*="grid-cols"] > :nth-child(3)::after { animation-delay: 6s; }
+
+/* Active card steps forward, the others dim (starts after the scroll reveal ends) */
+#benefits [class*="grid-cols"] > *:not(.rv):not(.rv-in),
+#workflow [class*="grid-cols"] > *:not(.rv):not(.rv-in) {
+  animation: tm-focus 9s ease-in-out infinite both;
+}
+
+#benefits [class*="grid-cols"] > :nth-child(2):not(.rv):not(.rv-in),
+#workflow [class*="grid-cols"] > :nth-child(2):not(.rv):not(.rv-in) { animation-delay: 3s; }
+
+#benefits [class*="grid-cols"] > :nth-child(3):not(.rv):not(.rv-in),
+#workflow [class*="grid-cols"] > :nth-child(3):not(.rv):not(.rv-in) { animation-delay: 6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  #benefits [class*="grid-cols"] > *:not(.rv):not(.rv-in),
+  #workflow [class*="grid-cols"] > *:not(.rv):not(.rv-in) {
+    animation: none;
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* Hover lift for the workflow step cards */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  #workflow [class*="grid-cols"] > li {
+    transition: translate 0.25s ease, box-shadow 0.25s ease;
+  }
+  #workflow [class*="grid-cols"] > li:hover {
+    translate: 0 -4px;
+    box-shadow: var(--shadow-md);
+  }
+}

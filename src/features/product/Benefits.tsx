@@ -6,7 +6,7 @@ export default function Benefits() {
     <section id="benefits" className="scroll-mt-20 bg-background-alt py-16 lg:py-28">
       <div className="mx-auto max-w-[1200px] px-4 md:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Why DialProx"
+          eyebrow="Why DialProX"
           title="Built for teams that can’t afford to miss a call"
           description="The basics, done right, so your customers always get an answer."
         />
@@ -29,3 +29,4 @@ export default function Benefits() {
     </section>
   );
 }
+

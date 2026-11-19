@@ -16,7 +16,7 @@ export default function DashboardPreview() {
   return (
     <div
       role="img"
-      aria-label="DialProx dashboard preview showing a live call, key metrics, and recent calls"
+      aria-label="DialProX dashboard preview showing a live call, key metrics, and recent calls"
       className="animate-fade-in rounded-2xl border border-white/20 bg-dark-section p-4 text-white shadow-xl"
     >
       <div aria-hidden="true" className="mb-3 flex gap-1.5">
@@ -77,4 +77,5 @@ export default function DashboardPreview() {
     </div>
   );
 }
+
 
